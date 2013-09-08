@@ -1,15 +1,19 @@
+// pgcl is a client for parget
+// it only downloads one single file per run
+// TODO: add chunks that have failed to load back into the queue
 package main
 
 import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/captaincronos/parget"
 	"log"
 	"net"
 	"os"
 	"strconv"
 	"sync"
+
+	"github.com/captaincronos/parget"
 )
 
 var usage = `Usage: parcl <server_addr> <remote_file_name> <local_file_name> [-chunk chunk_size] [-conns num_cons]`
